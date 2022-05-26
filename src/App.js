@@ -1,20 +1,35 @@
 import { useEffect, useState } from "react"
 
 
+
+/**
+ * COME FUNZIONA
+ * useState mantiene lo stato della modalità light, dark
+ * 
+ */
 function App() {
 
   const [styleMode, setStyleMode] = useState('light')
 
+  //Cambiamolo il titolo alla finestra... potevamo farlo da html visto che è una pagina sola
   useEffect(() => {
     document.title = "Dark mode"
   }, []);
 
+  //quando viene chiamata fa lo switch della modalità
   const switchMode = () => {
     setStyleMode((oldValue) => {
-      return oldValue === 'light' ? 'dark' : 'light';
+      return oldValue === 'light' ? 'dark' : 'light'; // operatore ternario
     })
   };
 
+  //
+  /** 
+   * [].join, aggiungiamo lo stile dinamicamente usando un array separato da spazio
+   * onMouseDown={(e) => e.preventDefault()} workaround per evitare lo sgradevole effetto del bottone che rimane pressato
+   * onClick={switchMode} -> chiamiamo la funzione switchMode
+   * {styleMode === 'light' ? "Modalità dark" : "Modalità light"} usiamo l'operatore ternario per mostrare un testo di verso in base allo stato
+   */
   return (
     <div className={['App', styleMode].join(" ")}>
       <div className="container p-4">
@@ -38,6 +53,7 @@ function App() {
   );
 }
 
+//Creato questo componente per evitare di ripetetere il paragrafo e per una maggiore pulizia del codice
 function CardConTesto() {
   return <>
     <div className="col-lg-4">
