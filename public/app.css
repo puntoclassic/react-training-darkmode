@@ -9,17 +9,23 @@ html, body {
 .App {
   height: 100%;
 }
+.App * {
+  transition-property: background-color;
+  transition-duration: 500ms;
+}
 
 .light {
   background-color: white;
   color: black;
-  transition: background-color 1000ms linear;
-  transition: color 1000ms linear;
+}
+.light .card {
+  background-color: white;
 }
 
 .dark {
   background-color: black;
   color: white;
-  transition: background-color 1000ms linear;
-  transition: color 1000ms linear;
+}
+.dark .card {
+  background-color: #595656;
 }/*# sourceMappingURL=app.css.map */

@@ -9,28 +9,26 @@ html,body {
 
 .App {
     height: 100%;
+
+    & * {
+        transition-property: background-color;
+        transition-duration: 500ms;
+    }
 }
 
 .light {
     background-color: white;
-    color:black;    
-    -webkit-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
-    -webkit-transition: color 1000ms linear;
-    -ms-transition: color 1000ms linear;
-    transition: color 1000ms linear;
+    color:black;       
+    .card {
+        background-color: white;
+    }  
 }
-
 
 .dark {
    background-color: black;
-   color:white;
-   -webkit-transition: background-color 1000ms linear;
-   -ms-transition: background-color 1000ms linear;
-   transition: background-color 1000ms linear;
-   -webkit-transition: color 1000ms linear;
-    -ms-transition: color 1000ms linear;
-    transition: color 1000ms linear;
-   
+   color:white;   
+
+   .card {
+       background-color: #595656;
+   }   
 }
