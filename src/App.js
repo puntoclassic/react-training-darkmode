@@ -9,7 +9,16 @@ import { useEffect, useState } from "react"
  */
 function App() {
 
-  const [styleMode, setStyleMode] = useState('light')
+  //ottiene dalla memoria locale qual'è ultima modalità impostata
+  const getFromLocalStorage = () => {
+    if (localStorage.getItem("styleMode")) {
+      return localStorage.getItem("styleMode");
+    } else {
+      return "light"
+    }
+  }
+
+  const [styleMode, setStyleMode] = useState(getFromLocalStorage())
 
   //Cambiamolo il titolo alla finestra... potevamo farlo da html visto che è una pagina sola
   useEffect(() => {
@@ -19,7 +28,11 @@ function App() {
   //quando viene chiamata fa lo switch della modalità
   const switchMode = () => {
     setStyleMode((oldValue) => {
-      return oldValue === 'light' ? 'dark' : 'light'; // operatore ternario
+      const newVal = oldValue === 'light' ? 'dark' : 'light';
+
+      //memorizza nella memoria locale la modalità scelta
+      localStorage.setItem("styleMode", newVal);
+      return newVal; // operatore ternario
     })
   };
 
