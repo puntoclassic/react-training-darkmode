@@ -1,0 +1,36 @@
+
+html,body {
+    height: 100%;
+}
+
+#App, #root {
+    height:100%;    
+}
+
+.App {
+    height: 100%;
+}
+
+.light {
+    background-color: white;
+    color:black;    
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+    -webkit-transition: color 1000ms linear;
+    -ms-transition: color 1000ms linear;
+    transition: color 1000ms linear;
+}
+
+
+.dark {
+   background-color: black;
+   color:white;
+   -webkit-transition: background-color 1000ms linear;
+   -ms-transition: background-color 1000ms linear;
+   transition: background-color 1000ms linear;
+   -webkit-transition: color 1000ms linear;
+    -ms-transition: color 1000ms linear;
+    transition: color 1000ms linear;
+   
+}

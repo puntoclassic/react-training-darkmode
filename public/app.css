@@ -1,0 +1,25 @@
+html, body {
+  height: 100%;
+}
+
+#App, #root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
+.light {
+  background-color: white;
+  color: black;
+  transition: background-color 1000ms linear;
+  transition: color 1000ms linear;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+  transition: background-color 1000ms linear;
+  transition: color 1000ms linear;
+}/*# sourceMappingURL=app.css.map */
